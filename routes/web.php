@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('layouts/frontend/' . config('setting.frontend.template.folder', 'varsity') . '/home');
 });
+Route::get('about{ext}', function () {
+    return 'About page';
+});
 Route::get('/hash/{key}', function ($key) {
     return \Illuminate\Support\Facades\Hash::make($key);
 });
@@ -25,3 +28,9 @@ Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProvider
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/{group}', 'Blog\GroupController@index');
+Route::get('/{group}/{slug}', 'Blog\GroupController@slug');
+Route::get('{slug}', [
+    'uses' => 'SlugController@get'
+])->where('slug', '([A-Za-z0-9\-\/]+)');

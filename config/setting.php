@@ -7,6 +7,7 @@
  */
 
 return [
+    'url-ext' => '.html',
     'frontend' => [
         'template' => [
             'name' => 'Varsity',
