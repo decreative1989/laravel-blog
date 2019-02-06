@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts/frontend/' . config('setting.frontend.template.folder', 'varsity') . '/home');
 });
 Route::get('/hash/{key}', function ($key) {
     return \Illuminate\Support\Facades\Hash::make($key);

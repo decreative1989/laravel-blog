@@ -95,3 +95,13 @@
         });
     </script>
 @endsection
+@section('header-css')
+    <style type="text/css">
+        .register-page {
+            overflow: auto !important;
+            background: url('{{asset('backend/images/register-background.jpg')}}') no-repeat 0px 0px;
+            background-size: cover;
+        }
+    </style>
+@endsection
+

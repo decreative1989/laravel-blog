@@ -100,3 +100,13 @@
         });
     </script>
 @endsection
+
+@section('header-css')
+    <style type="text/css">
+        .login-page {
+            overflow: auto !important;
+            background: url('{{asset('backend/images/login-background.jpg')}}') no-repeat 0px 0px;
+            background-size: cover;
+        }
+    </style>
+@endsection
