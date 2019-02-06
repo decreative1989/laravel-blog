@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace SanSan\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

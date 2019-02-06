@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "sansan/blog",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Personal Blog with Laravel Framework.",
     "keywords": [
         "framework",
         "laravel"
@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "SanSan\\": "app/"
         },
         "classmap": [
             "database/seeds",
