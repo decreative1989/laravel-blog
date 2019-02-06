@@ -2,6 +2,7 @@
 
 namespace SanSan\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use SanSan\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -36,6 +37,35 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * Override username() for enable login using Email or Username.
+     * @return string
+     */
+    public function username()
+    {
+        $login = request()->input('login');
+        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        request()->merge([$field => $login]);
+        return $field;
+    }
+
+
+    /**
+     * Custom Validate With is_active
+     * @param Request $request
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            $this->username() => 'required|exists:users,' . $this->username() . ',is_active,1',
+            'password' => 'required',
+        ], [
+            $this->username() . '.exists' => 'The selected ' . $this->username() . ' is Invalid or the account has been Disabled.'
+        ]);
+    }
+
 
     /**
      * Redirect the user to the OAuth Provider.
