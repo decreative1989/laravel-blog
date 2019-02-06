@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/hash/{key}', function ($key) {
+    return \Illuminate\Support\Facades\Hash::make($key);
+});
 
 // OAuth Routes => Social Login
 Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToProvider');

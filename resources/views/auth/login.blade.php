@@ -9,20 +9,26 @@
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">{{ __('Sign in to start your session') }}</p>
-
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="form-group has-feedback">
-                    <input type="text" id="login" class="form-control" placeholder="{{ __('E-Mail or Username') }}">
+                    <input type="text" id="login" name="login" class="form-control"
+                           placeholder="{{ __('E-Mail or Username') }}" required>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    @if ($errors->has('login'))
+                    @if ($errors->has('username'))
                         <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('login') }}</strong>
+                        <strong>{{ $errors->first('username') }}</strong>
+                    </span>
+                    @endif
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('email') }}</strong>
                     </span>
                     @endif
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="{{__('Password')}}">
+                    <input type="password" id="password" name="password" class="form-control"
+                           placeholder="{{__('Password')}}" required>
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     @if ($errors->has('password'))
                         <span class="invalid-feedback" role="alert">
@@ -48,14 +54,16 @@
 
             <div class="social-auth-links text-center">
                 <p>- OR -</p>
-                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign
+                <a href="{{url('/auth/facebook')}}" class="btn btn-block btn-social btn-facebook btn-flat"><i
+                        class="fa fa-facebook"></i> {{__('Sign
                     in
                     using
-                    Facebook</a>
-                <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign
+                    Facebook')}}</a>
+                <a href="{{url('/auth/google')}}" class="btn btn-block btn-social btn-google btn-flat"><i
+                        class="fa fa-google"></i> {{__('Sign
                     in
                     using
-                    Google+</a>
+                    Google')}}</a>
             </div>
             <!-- /.social-auth-links -->
             @if (Route::has('password.request'))
