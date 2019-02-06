@@ -4,7 +4,7 @@
     <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{asset('backend/admin-lte-2.4.5/index2.html')}}"><b>Admin</b>LTE</a>
+            <a href="{{url('home')}}"><b>{{ config('app.name', 'Laravel') }}</b></a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">

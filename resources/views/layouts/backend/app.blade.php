@@ -28,7 +28,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-    @yield('header-css')
+@yield('header-css')
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,6 +42,13 @@
 </head>
 <body>
 @yield('content')
+
+<!-- jQuery 3 -->
+<script src="{{asset('backend/admin-lte-2.4.5/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{{asset('backend/admin-lte-2.4.5/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<!-- iCheck -->
+<script src="{{asset('backend/admin-lte-2.4.5/plugins/iCheck/icheck.min.js')}}"></script>
 @yield('footer-js')
 </body>
 </html>
