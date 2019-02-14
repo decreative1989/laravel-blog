@@ -12,13 +12,13 @@
                 </button>
                 <!-- LOGO -->
                 <!-- TEXT BASED LOGO -->
-                <a class="navbar-brand" href="index.html"><i class="fa fa-university"></i><span>Varsity</span></a>
+                <a class="navbar-brand" href="index.html"><i class="fa fa-university"></i><span>SanSan</span></a>
                 <!-- IMG BASED LOGO  -->
             <!-- <a class="navbar-brand" href="index.html"><img src="{{asset('frontend/'.config('setting.frontend.template.folder','varsity').'/assets/img/logo.png')}}" alt="logo"></a> -->
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{url('/')}}">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Course <span
                                 class="fa fa-angle-down"></span></a>
@@ -27,7 +27,7 @@
                             <li><a href="course-detail.html">Course Detail</a></li>
                         </ul>
                     </li>
-                    <li class="active"><a href="gallery.html">Gallery</a></li>
+                    <li class="active"><a href="{{url('gallery')}}">Gallery</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span
                                 class="fa fa-angle-down"></span></a>

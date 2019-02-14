@@ -29,7 +29,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/album', 'Web\GalleryController@index');
+Route::get('/gallery', 'Web\GalleryController@index');
 
 Route::get('/{group}', 'Blog\GroupController@index');
 Route::get('/{group}/{slug}', 'Blog\GroupController@slug');
