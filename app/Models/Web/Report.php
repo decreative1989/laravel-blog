@@ -1,6 +1,6 @@
 <?php
 
-namespace SanSan\Models\Web;
+namespace App\Models\Web;
 
 use Illuminate\Database\Eloquent\Model;
 
