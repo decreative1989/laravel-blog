@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        SanSan\Providers\AppServiceProvider::class,
-        SanSan\Providers\AuthServiceProvider::class,
-        // SanSan\Providers\BroadcastServiceProvider::class,
-        SanSan\Providers\EventServiceProvider::class,
-        SanSan\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

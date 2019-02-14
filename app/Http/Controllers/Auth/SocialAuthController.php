@@ -1,11 +1,11 @@
 <?php
 
-namespace SanSan\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use SanSan\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-use SanSan\User;
+use App\User;
 
 class SocialAuthController extends Controller
 {

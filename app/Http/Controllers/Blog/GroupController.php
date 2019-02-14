@@ -1,10 +1,10 @@
 <?php
 
-namespace SanSan\Http\Controllers\Blog;
+namespace App\Http\Controllers\Blog;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use SanSan\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class GroupController extends Controller
 {
@@ -46,7 +46,7 @@ class GroupController extends Controller
      */
     private function doCheckGroup(string $group)
     {
-        $groupModel = 'SanSan\\Models\\Blog\\' . ucfirst(__($group, [], 'en'));
+        $groupModel = 'App\\Models\\Blog\\' . ucfirst(__($group, [], 'en'));
         try {
             $model = \App::make($groupModel);
         } catch (\Exception $e) {
