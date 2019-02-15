@@ -29,6 +29,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/contact', function () {
+    return view('layouts.frontend.varsity.contact');
+});
 Route::get('/gallery', 'Web\GalleryController@index');
 
 Route::get('/{group}', 'Blog\GroupController@index');
